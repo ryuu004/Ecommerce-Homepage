@@ -1,0 +1,306 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Buong code sa navbar, mula dito*/
+
+.profile-icon {
+    width: 2vw;
+    height: 2vw;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.cart-icon {
+    width: 2vw;
+    height: 2vw;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #333;
+    color: #fff;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    user-select: none;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 15px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links a {
+    margin-left: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.1vw;
+    text-decoration: none;
+    font-family: sans-serif;
+    transition: color 0.3s ease
+}
+
+.nav-links a:hover {
+    color: #858383;
+}
+
+login :hover {
+    color: #36917c;
+}
+
+/* end of navbar */
+
+.header{
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 1.8vw;
+    color: #333;
+    margin-top: 10%;
+    margin-left: 7%;
+}
+
+.header h1 {
+    margin-right: 40%;
+}
+
+/* categories */
+
+.categories {
+    max-width: 100%;
+    margin-top: 7%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider-wrapper .image-list {
+    display: grid;
+    gap: 35px;
+    grid-template-columns: repeat(15,1fr);
+    font-size: 0
+}
+
+
+.slider-wrapper .image-list .image-item {
+    font-size: initial;
+    width: 8vw;
+    height: 7vw;
+    background-color: white;
+    padding: 10%;
+    padding-bottom: 50%;
+    margin: 0;
+    border-radius: 10%;
+}
+
+.slider-wrapper .image-list figure {
+    margin: 0;
+    position: relative;
+}
+
+.slider-wrapper .image-list figcaption {
+
+    position: absolute;
+    bottom: 5%;
+    left: 60%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 0.9vw;
+    color: #333;
+    font-weight: 750;
+} 
+
+.slider-wrapper .image-list figure:hover figcaption {
+    text-decoration: underline;
+}
+
+.slider-wrapper .image-list figure:hover{
+    cursor: pointer;
+}
+
+.slider-wrapper .slide-button {
+    position: absolute;
+    height: 3vw;
+    width: 3vw;
+    color: white;
+    border: none;
+    background: #36917c;
+    font-size: 1.8vw;
+    cursor: pointer;
+    border-radius: 50%;
+    outline: none;
+    transform: translateY(-50%);
+}
+
+.slider-wrapper .slide-button:hover {
+    background: #444;
+}
+
+.slider-wrapper .slide-button#prev-slide {
+    left: 10px;
+    z-index: 1;
+    top: 80px;    
+}
+
+.slider-wrapper .slide-button#next-slide {
+    right: 10px;
+    top: 80px;
+}
+
+/* end of categories slider */
+
+
+.header1{
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 1vw;
+    color: #333;
+    margin-top: 10%;
+    margin-left: 7%;
+}
+
+.header1 h1 {
+    margin-right: 40%;
+}
+
+/* end of h1 */
+
+.slider-wrapper1 {
+    position: relative;
+    max-width: 75%;
+    margin: 3% auto 5%;
+}
+
+.slider1 {
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    aspect-ratio: 8 / 9;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    border-radius: 10%;
+
+    background-color: white;
+}
+
+.slider1:hover {
+    transform: scale(1.01);
+    transition: transform 0.3s ease;
+}
+
+
+.slider1 img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    width: 40%;
+    height: 100%;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: black;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}
+
+/* end of latest-product slider */
+
+.header2{
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 1vw;
+    color: #333;
+    margin-top: 10%;
+    margin-left: 7%;
+}
+
+.header2 h1 {
+    margin-right: 40%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3%;
+    margin: 5%;
+  }
+  
+  .grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%; 
+    height: auto;
+    background-color: white;
+    border-radius: 15%;
+    margin: 0;
+   }
+  
+  .image {
+    width: 80%;
+    height: auto;
+    margin-top: 10%;
+  }
+  
+  .name {
+    margin-top: auto;
+    font-size: 1.1vw;
+  }
+  
+  .price {
+    margin-top: 3px;
+    color: #36917c;
+  }

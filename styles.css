@@ -34,12 +34,13 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
 .logo {
     font-size: 1.5rem;
+    
 }
 
 .nav-links {
@@ -162,7 +163,7 @@ login :hover {
     user-select: none;
     max-width: 57%;
     height: auto;
-    margin-right: 5%;
+    margin-right: 5%;   
 }
 
 .how-to-build {
