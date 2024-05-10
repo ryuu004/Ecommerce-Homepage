@@ -81,6 +81,8 @@ body {
 /* end of navbar */
 
 .header{
+    display: flex;
+    width: 100%;
     font-family: 'Albert Sans', sans-serif;
     font-size: 1.8vw;
     color: #333;
@@ -88,8 +90,34 @@ body {
     margin-left: 7%;
 }
 
+.search-box {
+    width: 60%;
+    padding: 10%;
+    background-color: white;
+    margin-right: 10%;
+    margin-left: 10%;
+    border-radius: 15px;
+}
+
+.row {
+    display: flex;
+    align-text: center;
+    padding: 10px 20px; 
+}
+
+.search-box input {
+    flex: 1;
+    height: 100%;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+
 .header h1 {
-    margin-right: 40%;
+    margin-right: 0%;
 }
 
 /* categories */
@@ -216,8 +244,8 @@ body {
     scroll-behavior: smooth;
     box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
     border-radius: 10%;
-
     background-color: white;
+    cursor: pointer;
 }
 
 .slider1:hover {
@@ -273,34 +301,47 @@ body {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 3%;
+    gap: 1%;
+    row-gap: 3%;
     margin: 5%;
   }
   
   .grid-item {
-    display: flex;
+    cursor: pointer;
+    display: flex; 
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 100%; 
+    width: 100%;
     height: auto;
     background-color: white;
-    border-radius: 15%;
+    border-radius: 20px;
     margin: 0;
+    padding-bottom: 8%;
+    transition: 0.5s ease
+   }
+
+   .grid-item:hover {
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
    }
   
   .image {
-    width: 80%;
+    width: 85%;
     height: auto;
     margin-top: 10%;
   }
   
   .name {
+    padding: 10px;
     margin-top: auto;
     font-size: 1.1vw;
+    font-family: 'Albert Sans', sans-serif;
+    color: #333;
   }
   
   .price {
     margin-top: 3px;
     color: #36917c;
+    font-size: 1.1vw;
+    font-family: 'Albert Sans', sans-serif;
   }
