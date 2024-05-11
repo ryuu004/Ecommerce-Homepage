@@ -86,23 +86,24 @@ body {
     font-family: 'Albert Sans', sans-serif;
     font-size: 1.8vw;
     color: #333;
-    margin-top: 10%;
+    margin-top: 9%;
     margin-left: 7%;
 }
 
 .search-box {
-    width: 60%;
-    padding: 10%;
+    width: 55%;
+    height: 100%;
     background-color: white;
     margin-right: 10%;
     margin-left: 10%;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .row {
     display: flex;
-    align-text: center;
-    padding: 10px 20px; 
+    align-items: center;
+    text-align: center;
+    padding: 10px 15px;
 }
 
 .search-box input {
@@ -115,6 +116,44 @@ body {
     color: #333;
 }
 
+.search-box button {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+}
+
+button .fa-solid {
+    color: #333;
+    font-size: 1.5vw;
+    cursor: pointer;
+}
+
+.result-box {
+    max-height: 160px;
+    overflow-y: scroll;
+}
+
+.result-box ul {
+    border-top: 1px solid #858383;
+    padding: 15px 10px;
+    margin: 0;
+}
+
+.result-box ul li {
+    list-style: none;
+    border-radius: 3px;
+    padding: 10px 10px;
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 1.2vw;
+    color: #333;
+    cursor: pointer;
+    margin: 0;
+}
+
+.result-box ul li:hover {
+    background-color: #b5b5b5;
+    font-weight: 500;
+}
 
 .header h1 {
     margin-right: 0%;
@@ -342,6 +381,13 @@ body {
   .price {
     margin-top: 3px;
     color: #36917c;
+    font-size: 1.3vw;
+    font-family: 'Albert Sans', sans-serif;
+  }
+
+  .discounted-price {
+    margin-top: 3px;
+    color: #858383;
     font-size: 1.1vw;
     font-family: 'Albert Sans', sans-serif;
   }

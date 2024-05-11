@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9823e98254.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles1.css">
     <script src="script.js" defer></script>
 </head>
@@ -62,10 +63,14 @@
         <div class="search-box"> 
             <div class="row">
                 <input type="text" id="input-box" placeholder="Search anything">
-                <button>search</button>
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="result-box">
+
             </div>
         </div>
     </div>
+    <script src="autocomplete.js"></script>
 <div class="categories">
     <div class="slider-wrapper">
         <button id="prev-slide" class="slide-button">&#60;</button>
@@ -143,11 +148,38 @@
             <img src="Items/latest2.png" alt="latest-img-2" id="slide-2">           
         </div>
         <div class="slider-nav">
-            <a href="#slide-1"></a>
-            <a href="#slide-2"></a>
+            <a onclick="changeSlide(1)"></a>
+            <a onclick="changeSlide(2)"></a>
         </div>
     </div>
 </section>
+
+<script>
+    // JavaScript code for slider functionality
+    let currentSlide = 1;
+    let isTransitioning = false;
+
+    function changeSlide(slideNumber) {
+        if (isTransitioning || slideNumber === currentSlide) return;
+
+        const slider = document.querySelector('.slider1');
+
+        // Hide current slide with transition delay
+        slider.children[currentSlide - 1].style.transition = 'opacity 0.3s';
+        slider.children[currentSlide - 1].style.opacity = 0;
+        
+        isTransitioning = true;
+        setTimeout(() => {
+            // Show new slide after delay
+            slider.children[currentSlide - 1].style.display = 'none';
+            slider.children[slideNumber - 1].style.display = 'block';
+            slider.children[slideNumber - 1].style.opacity = 1;
+            currentSlide = slideNumber;
+            isTransitioning = false;
+        }, 250); // Adjust delay time (in milliseconds) as needed
+    }
+</script>
+
 <div class="header2">
     <h1><span style="color: #3ec2a7;">For You.</span> Your personalized haven for must-have products.</h1></div>
 
@@ -155,51 +187,61 @@
         <div class="grid-item">
           <img src="Foryouimage/(1) G Skill Trident Z Neo 16gb 2x8 Memory 3200mhz Ddr4 RGB.png" alt="Image 1" class="image">
           <div class="name">G Skill Trident Z Neo 16gb 2x8 Memory 3200mhz Ddr4 RGB</div>
-          <div class="price">$10.00</div>
+          <div class="price">&#8369;3,819.00</div>
+          <div class="discounted-price"><del>&#8369;5,552.00</del></div>
         </div>
         <div class="grid-item">
             <img src="Foryouimage/(1) Gigabyte B550M DS3H AC Wifi Socket Am4 Ddr4 Motherboard.png" alt="Image 2" class="image">
             <div class="name">Gigabyte B550M DS3H AC Wifi Socket Am4 Ddr4 Motherboard</div>
-            <div class="price">$10.00</div>
+            <div class="price">&#8369;6,285.00</div>
+            <div class="discounted-price"><del>&#8369;₱6,350.00</del></div>
           </div>
         <div class="grid-item">
             <img src="Foryouimage/(1) Adata Legend 710 Solid State Drive 512GB PCIe GEN3 x4 M.2 2280.png" alt="Image 2" class="image">
             <div class="name">Adata Legend 710 Solid State Drive 512GB PCIe GEN3 x4 M.2 2280</div>
-            <div class="price">$10.00</div>
+            <div class="price">&#8369;1,999.00</div>
+            <div class="discounted-price"><del>&#8369;2,280.00</del></div>
           </div>
         <div class="grid-item">
             <img src="Foryouimage/(1) AMD Ryzen 5 5600G Cezanne 3.9GHz 6-Core AM4 Boxed Processor.jpg" alt="Image 2" class="image">
             <div class="name">GigAMD Ryzen 5 5600G Cezanne 3.9GHz 6-Core AM4 Boxed Processor</div>
-            <div class="price">$10.00</div>
+            <div class="price">&#8369;6,725</div>
+            <div class="discounted-price"><del>&#8369;9,800</del></div>
           </div>
         <div class="grid-item">
             <img src="Foryouimage/(1) Asus ROG RYUO III 240 ARGB Liquid Cooler White.png" alt="Image 2" class="image">
             <div class="name">Asus ROG RYUO III 240 ARGB Liquid Cooler White</div>
-            <div class="price">$10.00</div>
+            <div class="price">&#8369;12,499.00</div>
+            <div class="discounted-price"><del>&#8369;13,850.00 </del></div>
           </div>
         <div class="grid-item">
             <img src="Foryouimage/(1) Galax NVIDIA® GeForce GTX 1650 EX Plus 1-Click OC 4gb 128bit GDdr6 Gaming Videocard.png" alt="Image 2" class="image">
             <div class="name">Galax NVIDIA® GeForce GTX 1650 EX Plus 1-Click OC 4gb 128bit GDdr6 Gaming Videocard</div>
-            <div class="price">$10.00</div>
+            <div class="price">&#8369;6,499.00</div>
+            <div class="discounted-price"><del>&#8369;8,500.00</del></div>
           </div>
         <div class="grid-item">
             <img src="Foryouimage/(1) MSI MAG A550BN Gaming Power Supply - 80 Plus Bronze Certified 550W - Compact Size - ATX PSU.png" alt="Image 2" class="image">
             <div class="name">MSI MAG A550BN Gaming Power Supply - 80 Plus Bronze Certified 550W - Compact Size - ATX PSU</div>
-            <div class="price">$10.00</div>
+            <div class="price">&#8369;2,259.00</div>
+            <div class="discounted-price"><del>&#8369;2,760.00</del></div>
           </div>
         <div class="grid-item">
             <img src="Foryouimage/(1) MSI MAG Vampiric 100R Mid Tower Gaming PC Case Black.png" alt="Image 2" class="image">
             <div class="name">MSI MAG Vampiric 100R Mid Tower Gaming PC Case Black</div>
-            <div class="price">$10.00</div>
+            <div class="price">&#8369;2,850.00</div>
+            <div class="discounted-price"><del>&#8369;4,095.00</del></div>
           </div>
         <div class="grid-item">
             <img src="Foryouimage/(1) Seagate Barracuda ST1000DM010 1tb 7200RPM 64MB Cache Sata Hard disk Drive.png" alt="Image 2" class="image">
             <div class="name">Seagate Barracuda ST1000DM010 1tb 7200RPM 64MB Cache Sata Hard disk Drive</div>
-            <div class="price">$10.00</div>
+            <div class="price">&#8369;1,225.00</div>
+            <div class="discounted-price"><del>&#8369;1,995.00</del></div>
           </div>
         <div class="grid-item">
             <img src="Foryouimage/(2) ASUS Prime B760M-K D5 Intel® B760 LGA 1700 mATX Motherboard.png" alt="Image 2" class="image">
             <div class="name">ASUS Prime B760M-K D5 Intel® B760 LGA 1700 mATX Motherboard</div>
-            <div class="price">$10.00</div>
+            <div class="price">&#8369;5,650.00 </div>
+            <div class="discounted-price"><del>&#8369;6,870.00</del></div>
           </div>
       </div>
