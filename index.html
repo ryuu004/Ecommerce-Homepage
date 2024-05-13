@@ -12,14 +12,13 @@
     <script src="script.js"></script>
 </head>
 <body>
-
 <nav class="navbar">
     <div class="container">
         <div class="logo">TECHNOBIRDS</div>
         <ul class="nav-links">
             <li><a href="#">HOME</a></li>
-            <li><a href="#">NEWSLETTER</a></li>
-            <li><a href="#">SUPPORT</a></li>
+            <li><a href="newsletter.html">NEWSLETTER</a></li>
+            <li><a href="support.html">SUPPORT</a></li>
             <li><a href="#">EXPERT REVIEWS</a></li>
             <img class="profile-icon" src="Icons/Profile.png" alt="Profile Icon">
             <li><a href="#" class= "login" 
@@ -53,10 +52,18 @@
                 this.style.color='#fff';"
 
                     ">BUY NOW</a></li>
-            <img class="cart-icon" src="Icons/Cart.png" alt="Cart Icon">
+            <img class="cart-icon" src="Icons/Cart.png" alt="Cart Icon" onclick="toggleCartNavbar()">
         </ul>
     </div>
 </nav>
+
+<div class="cart-navbar" id="cartNavbar">
+    <div class="header">
+        <span onclick="toggleCartNavbar()">&gt;</span>
+        <h1>Cart</h1>
+    </div>
+  </div>
+  <div class="backdrop-overlay"></div>
 
 <div class="content">
     <div class="title-container">
@@ -80,7 +87,7 @@
     </div>
 </div>
 
-<div class="icon-grid">
+<div class="icon-grid" id="blur1">
     <div class="icon">
         <img src="Icons/WifiLogo.png" alt="Icon 1">
         <h1>WIDE SELECTION</h1>
@@ -155,11 +162,11 @@
     </div>
     <div class="about-us">
         <h1>ABOUT US</h1>
-        <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere.</p>
+        <p>TECHNOBIRDS launched a digital marketplace in 2024, offering computer components that you need. Our mission is to provide tech enthusiasts and casual users alike with a seamless shopping experience, backed by our commitment to quality, reliability, and customer satisfaction. Join us at TECHNOBIRDS and let your tech dreams take flight.</p>
     </div> 
     <div class="new-releases">
         <h1>NEW RELEASES</h1>
-        <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.</p>
+        <p>TECHNOBIRDS strive to bring you the latest trends and advancements in technology, all conveniently accessible at your fingertips. Whether you're a tech enthusiast or a casual user, with TECHNOBIRDS, embrace the future of tech with confidence and style.</p>
         <div class="input-container">
         <form>
             <label for="email">Enter your email here</label>

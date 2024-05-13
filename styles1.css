@@ -391,3 +391,104 @@ button .fa-solid {
     font-size: 1.1vw;
     font-family: 'Albert Sans', sans-serif;
   }
+
+  /* last content */
+
+.last-content {
+    background-color: #ededed;
+    display: flex;
+    padding-top: 7%;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-bottom: 10%;
+
+}
+
+.underlined-text {
+    width: 30%;
+}
+
+.ultxtlinks {
+    list-style-type: none;
+    
+}
+
+.ultxtlinks a{
+    font-family: 'Albert Sans', sans-serif;
+    color: #333;
+    font-size: 1.4vw;
+    font-weight: normal;
+    line-height: 2;
+}
+
+.about-us{
+    font-family: 'Albert Sans', sans-serif;
+    color: #333;
+    width: 30%;
+    margin-right: 5%;
+    font-weight: 300;
+}
+
+.about-us h1{
+    font-size: 1.4vw;
+    font-weight: normal;
+}
+
+.about-us p{
+    font-size: 1.3vw;
+}
+
+.new-releases{
+    font-family: 'Albert Sans', sans-serif;
+    color: #333;
+    width: 30%;
+    font-weight: 300;
+}
+
+.new-releases h1{
+    font-size: 1.4vw;
+    font-weight: normal;
+}
+
+.new-releases p{
+    font-size: 1.3vw;
+}
+
+.input-container {
+    position: relative;
+    width: 300px;
+    margin-bottom: 5%;
+  }
+
+  .input-container input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .input-container label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #999;
+  }
+
+  .Subscribe {
+    background-color: #3ec2a7;
+    color: #fff;
+    border: 2px solid #3ec2a7;
+    padding: 3% 30%;
+    font-size: 1.1vw;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    }
+    
+    .Subscribe:hover {
+    background-color: white;
+    color: #3ec2a7;
+    border-color: #3ec2a7;
+    }

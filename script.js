@@ -40,3 +40,12 @@ slideButtons.forEach(button => {
         button.addEventListener("click", slidePrevious);
     }
 });
+
+function toggleCartNavbar() {
+    var cartNavbar = document.getElementById('cartNavbar');
+    var body = document.querySelector('body');
+    var backdropOverlay = document.querySelector('.backdrop-overlay');  
+    backdropOverlay.classList.toggle('active');
+    cartNavbar.classList.toggle('active');
+    body.style.overflow = cartNavbar.classList.contains('active') ? 'hidden' : 'auto';
+}
