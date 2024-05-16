@@ -84,6 +84,70 @@ login :hover {
     height: 250px;
 }
 
+.head h1 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 3.2vw;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.paragraph-container {
+    margin: 3% 25%;
+    text-align: center;
+}
+
+.paragraph-container p{
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 1vw;  
+    color: #333;
+}
+
+.input-container1 {
+    margin: 3% 30%;
+    text-align: center;
+    margin-bottom: 5%;
+
+}
+
+.input-container1 h1 {
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 1.2vw;  
+    color: #333;   
+    font-weight: normal;
+}
+
+.input-container1 input {
+    width: 55%;
+    padding: 2%;
+    margin: 1% 10%;
+}
+
+.input-container1 .message {
+    padding-bottom: 10%;
+}
+
+.input-container1 .submit {
+    background-color: #3ec2a7;
+    color: #fff;
+    border: 2px solid #3ec2a7;
+    font-size: 1.1vw;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    width: 60%;
+}
+
+.input-container input #button:hover {
+    background-color: white;
+    color: #3ec2a7;
+    border-color: #3ec2a7;
+    }
+
 /* last content */
 
 .last-content {
