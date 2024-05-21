@@ -62,12 +62,12 @@
     <p>Check out our forum and find the answers you’ve been looking for.</p>
 </div>
 <div class="reviews-nav">
-    <p style="color:#3ec2a7">All Post</p>
-    <p>My Post</p>
+    <p id="all-post" style="color:#3ec2a7" onclick="showReviews()">All Post</p>
+    <p id="my-post" onclick="showMyPosts()">My Post</p>
     <p>Categories</p>
     <button>Create New Post</button>
 </div>
-<div class="reviews-container">
+<div class="reviews-container" id="reviews-container">
     <div class="review">
         <div class="pfp">        
             <img src="pfp/butterfly.png" alt="ofp">
@@ -85,10 +85,12 @@
             <span>Comment</span>
         </div>
         <div class="comment">
-            <span>Comments</span><span>(0)</span>
+            <span>Comments</span><span class="comment-count">(0)</span>
             <div class="comment-box">
                 <input type="text" name="comment" id="comment" placeholder="Write a comment...">
+                <button class="send-button">Send</button>
             </div>  
+            <div class="comment-container"></div>
         </div>
     </div>
     <div class="review">
@@ -108,10 +110,12 @@
             <span>Comment</span>
         </div>
         <div class="comment">
-            <span>Comments</span><span>(0)</span>
+            <span>Comments</span><span class="comment-count">(0)</span>
             <div class="comment-box">
                 <input type="text" name="comment" id="comment" placeholder="Write a comment...">
+                <button class="send-button">Send</button>
             </div>  
+            <div class="comment-container"></div>
         </div>
     </div>
     <div class="review">
@@ -131,10 +135,74 @@
             <span>Comment</span>
         </div>
         <div class="comment">
-            <span>Comments</span><span>(0)</span>
+            <span>Comments</span><span class="comment-count">(0)</span>
+            <div class="comment-box">
+                <input type="text" name="comment" id="comment" placeholder="Write a comment...">
+                <button class="send-button">Send</button>
+            </div>  
+            <div class="comment-container"></div>
+        </div>
+    </div>
+</div>
+
+<div class="reviews-container" id="my-post-container" style="display: none;">
+    <!-- Content for "My Post" goes here -->
+    <div class="review">
+        <div class="pfp">        
+            <img src="pfp/ghostpfp.png" alt="pfp">
+            <span>Justine Carcueva</span>
+            <div class="elipsies">⋮</div>
+        </div>
+        <div class="user-post">
+            <h1>Speaker Static Symphony</h1>
+            <p>Picture yourself immersed in your favorite playlist, only to be rudely interrupted by a cacophony of crackling static emanating from your speakers. It's like a glitchy symphony that assaults your ears, turning your musical oasis into a sonic nightmare and leaving you longing for peace and quiet.</p>
+        </div>
+        <div class="react">        
+            <img src="pfp/like.png" alt="like">
+            <span>Like</span>
+            <img src="pfp/comment.png" alt="comment">
+            <span>Comment</span>
+        </div>
+        <div class="comment">
+            <span>Comments</span><span class="comment-count">(0)</span>
             <div class="comment-box">
                 <input type="text" name="comment" id="comment" placeholder="Write a comment...">
             </div>  
+        </div>
+    </div>
+</div>
+
+<div id="new-post-dialog" class="dialog" style="display: none;">
+    <div class="dialog-content">
+        <h2>Create New Post</h2>
+        <label for="post-title">Title</label>
+        <input type="text" id="post-title" name="post-title">
+        <label for="post-content">Content</label>
+        <textarea id="post-content" name="post-content"></textarea>
+        <div class="dialog-buttons">
+            <button onclick="postNewReview()">Post</button>
+            <button onclick="closeDialog()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
+<div id="categories-dialog" class="dialog" style="display: none;">
+    <div class="dialog-content">
+        <h2>Categories</h2>
+        <div class="categories-grid">
+            <span>Case</span>
+            <span>CPU Cooler</span>
+            <span>Graphics Card</span>
+            <span>Hard Disk Drive</span>
+            <span>Memory</span>
+            <span>Motherboard</span>
+            <span>Power Supply</span>
+            <span>Processors</span>
+            <span>Solid State Drive</span>
+        </div>
+        <div class="dialog-buttons">
+            <button onclick="closeCategoriesDialog()">Close</button>
         </div>
     </div>
 </div>
@@ -165,5 +233,144 @@
         <button class="Subscribe">Subscribe Now</button>
     </div> 
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.reviews-nav p:nth-child(2)').addEventListener('click', showMyPosts);
+    document.querySelector('.reviews-nav p:nth-child(1)').addEventListener('click', showReviews);
+    document.querySelector('.reviews-nav button').addEventListener('click', openDialog);
+    document.querySelector('.reviews-nav p:nth-child(3)').addEventListener('click', showCategories);
+    
+    const likeButtons = document.querySelectorAll('.react img:nth-child(1)');
+    likeButtons.forEach(button => {
+        button.addEventListener('click', toggleLike);
+    });
+
+    const sendButtons = document.querySelectorAll('.send-button');
+    sendButtons.forEach(button => {
+        button.addEventListener('click', addComment);
+    });
+});
+
+function toggleLike(event) {
+    const likeImage = event.target;
+    if (likeImage.src.includes('like.png')) {
+        likeImage.src = 'pfp/liked.png';
+    } else {
+        likeImage.src = 'pfp/like.png';
+    }
+}
+
+// Other existing functions
+
+function showMyPosts() {
+    document.getElementById('reviews-container').style.display = 'none';
+    document.getElementById('my-post-container').style.display = 'block';
+    document.getElementById('all-post').style.color = '';
+    document.getElementById('my-post').style.color = '#3ec2a7';
+}
+
+function showReviews() {
+    document.getElementById('reviews-container').style.display = 'block';
+    document.getElementById('my-post-container').style.display = 'none';
+    document.getElementById('all-post').style.color = '#3ec2a7';
+    document.getElementById('my-post').style.color = '';
+}
+
+function openDialog() {
+    document.getElementById('new-post-dialog').style.display = 'flex';
+}
+
+function closeDialog() {
+    document.getElementById('new-post-dialog').style.display = 'none';
+}
+
+function postNewReview() {
+    const title = document.getElementById('post-title').value;
+    const content = document.getElementById('post-content').value;
+
+    if (title && content) {
+        const newPost = document.createElement('div');
+        newPost.classList.add('review');
+        newPost.innerHTML = `
+            <div class="pfp">
+                <img src="pfp/ghostpfp.png" alt="pfp">
+                <span>Justine Carcueva</span>
+                <div class="elipsies">⋮</div>
+            </div>
+            <div class="user-post">
+                <h1>${title}</h1>
+                <p>${content}</p>
+            </div>
+            <div class="react">
+                <img src="pfp/like.png" alt="like" onclick="toggleLike(event)">
+                <span>Like</span>
+                <img src="pfp/comment.png" alt="comment">
+                <span>Comment</span>
+            </div>
+            <div class="comment">
+                <span>Comments</span><span class="comment-count">(0)</span>
+                <div class="comment-box">
+                    <input type="text" name="comment" id="comment" placeholder="Write a comment...">
+                    <button class="send-button">Send</button>
+                </div>
+                <div class="comment-container"></div>
+            </div>
+        `;
+
+        document.getElementById('my-post-container').appendChild(newPost);
+        closeDialog();
+
+        // Add event listener to the new send button
+        newPost.querySelector('.send-button').addEventListener('click', addComment);
+    } else {
+        alert('Please fill in both the title and content.');
+    }
+}
+
+function showCategories() {
+    document.getElementById('all-post').style.color = '';
+    document.getElementById('my-post').style.color = '';
+    document.getElementById('categories-dialog').style.display = 'flex';
+}
+
+function closeCategoriesDialog() {
+    document.getElementById('categories-dialog').style.display = 'none';
+}
+
+function addComment(event) {
+    const commentBox = event.target.previousElementSibling;
+    const commentText = commentBox.value.trim();
+
+    if (commentText) {
+        const newComment = document.createElement('div');
+        newComment.classList.add('comment-item');
+        newComment.innerHTML = `
+            <img src="pfp/ghostpfp.png" alt="Profile Icon">
+            <div class="comment-content">
+                <span>User Name</span>
+                <p>${commentText}</p>
+            </div>
+        `;
+
+        const commentContainer = event.target.closest('.comment').querySelector('.comment-container');
+        commentContainer.appendChild(newComment);
+        commentBox.value = '';
+
+        // Update comment count
+        const commentCountSpan = event.target.closest('.comment').querySelector('.comment-count');
+        let commentCount = parseInt(commentCountSpan.textContent.slice(1, -1));
+        commentCount++;
+        commentCountSpan.textContent = `(${commentCount})`;
+    } else {
+        alert('Please write a comment.');
+    }
+}
+
+
+</script>
+
+
+
 </body>
 </html>
